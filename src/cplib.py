@@ -6,7 +6,7 @@ import os.path
 import subprocess
 
 
-__version__ = (0, 3, 0)
+__version__ = (0, 3, 1)
 PATH = os.path.dirname(os.path.realpath(sys.argv[0]))
 DATA = os.path.join(PATH, 'custom_path.csv')
 
