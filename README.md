@@ -3,7 +3,7 @@ Mini PATH wrapper for cmd
 
 ## Basic Usage
 
-1 . Add a program to list (a csv file) dragging an `.exe` file onto `cpatha.exe` or type the full path from cli:
+1 . Add a program to list (a csv file) by dragging an `.exe` file onto `cpatha.exe` or type the full path from cli:
  
 ```shell
 $ cpatha "C:\full\path\to\executable\hello.exe"
@@ -26,7 +26,7 @@ $ cpath hello arg1 arg2 ...
 
 ### `cpathp`
 
-* Show full path of a listed program from first argv
+* Shows full path of a listed program from first argv
 * Lists all saved programs if no arg is passed
 * Can be executed with command redirection operators:
 ```shell
