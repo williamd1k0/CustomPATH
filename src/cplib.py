@@ -4,10 +4,15 @@
 import sys
 import os.path
 import subprocess
+from multiprocessing import Process
 
 
-__version__ = (0, 3, 1)
-PATH = os.path.dirname(os.path.realpath(sys.argv[0]))
+__version__ = (0, 4, 0)
+
+if 'python.exe' in sys.executable:
+    PATH = os.path.dirname(os.path.realpath(sys.argv[0]))
+else:
+    PATH = os.path.dirname(os.path.realpath(sys.executable))
 DATA = os.path.join(PATH, 'custom_path.csv')
 
 
@@ -22,6 +27,21 @@ def print_list():
 
 def exec_program(prog, args):
     return subprocess.call('"%s" %s' % (search_program(prog), ' '.join(args)), shell=True)
+
+
+def nowait_process(args):
+     pid = subprocess.Popen(args).pid
+    
+
+def exec_nowait(prog, args_):
+    progfull = search_program(prog)
+    arglist = list()
+    arglist.append(progfull)
+    if len(args_) > 0:
+        arglist.append(args_)
+    process = Process(target=nowait_process, args=[arglist])
+    process.start()
+    sys.exit(0)
 
 
 def show_path(prog, args):
