@@ -39,6 +39,11 @@ $ cpathp hello > hello-path.txt
 * Adds a new program to list from argv or dragging program onto executable. 
 * Lists all saved programs if no arg is passed
 
+### `cpathn`
+
+* Executes a listed program from first argv using an external process
+* Lists all saved programs if no arg is passed
+
 ## Path list
 
 A simple csv (`custom_path.csv`) that saves the programs paths.
